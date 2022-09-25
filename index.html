@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>DistrubLab.com!</title>
+    <!-- icon link  -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #1C2331 !important;
+            }
+        }
+
+        .view,
+        body,
+        html {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, .2)
+        }
+
+
+        .page-footer,
+        .top-nav-collapse {
+            background-color: #2629b3
+        }
+
+        @media only screen and (max-width:768px) {
+            .navbar {
+                background-color: #1C2331
+            }
+        }
+
+        #logo {
+            height: 70px;
+            width: 250px;
+        }
+
+        .mega_area {
+            position: absolute;
+            width: 45%;
+            right: 18%;
+        }
+
+        @media screen and (max-width: 1199px) {
+            .mega_area {
+                position: absolute;
+                width: 100%;
+                right: 18%;
+            }
+        }
+
+        /* for buttons */
+        #button-hov {
+            border: 2px groove #2629b3;
+            border-top-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        #button-hov:hover {
+            background: #2629b3;
+            color: white;
+
+        }
+
+        #button-hov2 {
+            border: 2px groove #2629b3;
+            border-top-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            background: #2629b3;
+            color: white;
+        }
+
+        #button-hov2:hover {
+            background: #2629b3;
+
+
+        }
+
+        /* #footer_hov:hover {
+            border-bottom: 1px groove #fff;
+        } */
+
+        #footer_hov::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: rgb(255, 255, 255);
+            transition: width .3s;
+            margin-right: 40%;
+            margin-left: 22%;
+        }
+
+        #footer_hov:hover::after {
+            width: 60%;
+            margin-right: 40%;
+            margin-left: 22%;
+
+            transition: width .3s;
+        }
+
+
+
+        @media only screen and (max-width:991px) {
+            #footer_hov::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                background: rgb(255, 255, 255);
+                transition: width .3s;
+                margin-right: 40%;
+                margin-left: 0%;
+            }
+
+            #footer_hov:hover::after {
+                width: 50%;
+                margin-right: 40%;
+                margin-left: 0%;
+
+                transition: width .3s;
+            }
+        }
+
+        .my_img {
+            transition: transform 0.8s;
+            height: 15rem;
+            width: 22rem;
+            /* Animation */
+        }
+
+        .my_img:hover {
+            transform: scale(1.1);
+        }
+
+
+        @media only screen and (max-width:768px) {
+            #row {
+                display: flex;
+                flex-flow: column-reverse;
+            }
+        }
+
+        .my_area:hover {
+            border: 1px solid black;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #border_croper {
+            border-top-right-radius: 90px;
+            border-bottom-left-radius: 90px;
+        }
+
+        #border_md_croper {
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        #border-sm-crop {
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg  sticky-lg-top  navbar-dark scrolling-navbar">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="./my-images/logo.png" target="_blank" id="logo">
+                <strong><img src="./my-images/logo.png" class="w-100" id="logo" alt=""></strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler e-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Left -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-capitilize dropdown-toggle " href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"> VISUAL AI INSPECTION</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item mt-1" href="./pages/medical.html">Medical (QAOS)</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item mt-1" href="./pages/caps-filling-inspection.html">Caps Filling
+                                    Inspection</a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item mt-1" href="./pages/lays-chips.html">Lays chips Counting $
+                                    Detection</a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item mt-1" href="./pages/laser-maker.html">Laser Marker Cone</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item mt-1" href="./pages/textile-soft.html">textile (Soft package
+                                    project)</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item mt-1" href="./pages/injection-mold.html">Injection Mold
+                                    Inspection</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item mt-1" href="#">Rice Quality Inspection</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" target="_blank" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"> VIDEO ANALYTICS</a>
+                        <div class="dropdown-menu mega_area" aria-labelledby="navbarDropdown">
+                            <!-- <div class="row"> -->
+                            <div class="row justify-content-center">
+                                <div class="col-sm-12 col-md-12 col-lg-3 m-lg-3">
+                                    <h6 style="width: 100%" class="ps-1">Retail Shops</h6>
+                                    <a class="dropdown-item mt-1" href="./pages/RS-cctv-moni.html">CCTV MOnitoring </a>
+                                    <a class="dropdown-item mt-1" href="./pages/coustomer-tracking.html">Customer
+                                        Tracking
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-12 col-md-12 col-lg-3 m-lg-3">
+                                    <h6 class="ps-1">Factory</h6>
+                                    <a class="dropdown-item mt-1" href="./pages/factory-cctv.html">CCTV Monitoiring</a>
+                                    <a class="dropdown-item mt-1" href="./pages/smoke-detaction.html">
+                                        VIDEO ANALYTICS</a>
+                                </div>
+
+                                <div class="col-sm-12 col-md-12 col-lg-3 m-lg-3">
+                                    <h6 class="ps-1"> SECURITY</h6>
+                                    <a class="dropdown-item mt-1" href="./pages/gun-detaction.html"> Gun Detection</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            OCR SOLUTIONS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item mt-1" href="./pages/box-ocr(inventory).html">Box OCR
+                                    (Inventory)</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item mt-1" href="./pages/CNIC-Detaction.html">
+                                    CNIC Number Detection</a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item mt-1" href="./pages/PDF-data.html">PDF Data Extraction</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item mt-1" href="#">Receipts Data Extraction</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" target="_blank">
+                            COMPANY</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Comapny1</a></li>
+                            <li><a class="dropdown-item" href="#">Company2</a></li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <!-- Right -->
+                <ul class="navbar-nav ms-lg-5 ">
+
+                    <li class="nav-item p-1">
+                        <a href="#" class="nav-link " id="button-hov" target="_blank">
+                            <i class=" ms-2" style="color: #2629b3;"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item p-1">
+                        <a href="#" class="nav-link " id="button-hov2" target="_blank">
+                            <i class=" ms-2  "></i>Login
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+
+    <div class="container-fluid p-0 m-0 bg-image">
+        <video width="100%" height="100%" playsinline="" autoplay="" muted="" loop="">
+            <source src="https://ambient.ai/wp-content/uploads/2021/11/hero-video.mp4" type="video/mp4">
+        </video>
+
+
+        <div class="px-4 pb-5 mb-5 text-center">
+
+            <h1 class="display-1  text-muted fw-bold">Disrupting the Computer Vision landscape</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4 fw-bold">Disrupt Lab is an intelligent visual AI company, designed to extract data
+                    from visual Sensors. </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="= px-4 btn-lg" id="button-hov">More Info</button>
+                    <button type="button" class="= btn-lg px-4" id="button-hov2">Contact US</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container-fluid my-3">
+        <div class="row justify-content-center">
+            <!-- for image  -->
+
+            <div class="col-lg-4 col-md-4 mx-auto my-auto  h-auto mb-5">
+                <img src="./my-images/banner_1.png" alt="" class="img-fluid " id="border_croper" />
+            </div>
+            <!-- for text and button   -->
+            <div class="col-lg-6 col-md-6 text-center my-auto">
+                <h1 class="display-4">OUR BIG IDEA</h1>
+                <!-- <p class="text-muted h3">The Smarter Localization Systems</p> -->
+                <p class="lead">
+                    Our mission is to become the recognized leader in developing
+                    computer vision solutions and products in Visual AI domain.
+                </p>
+                <button class="btn mx-2" id="button-hov">More Info</button>
+                <button class="btn" id="button-hov2">Contact Us</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid mt-5 ">
+        <!--Row with two equal columns-->
+        <div class="row mb-2">
+            <div class="col-3" id="border_md_croper"> <video class="" width="100%" height="100%" playsinline=""
+                    autoplay="" muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/hero-video.mp4" type="video/mp4">
+                </video></div>
+            <div class="col-3"> <video id="border_md_croper" width="100%" height="100%" playsinline="" autoplay=""
+                    muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/hero-video.mp4" type="video/mp4">
+                </video></div>
+            <div class="col-3"> <video id="border_md_croper" width="100%" height="100%" playsinline="" autoplay=""
+                    muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/hero-video.mp4" type="video/mp4">
+                </video></div>
+            <div class="col-3"> <video id="border_md_croper" width="100%" height="100%" playsinline="" autoplay=""
+                    muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/hero-video.mp4" type="video/mp4">
+                </video></div>
+        </div>
+
+        <!--Row with two columns divided in 1:2 ratio-->
+        <div class="row mb-2 ">
+            <div class="col-3" id=""> <video id="border_md_croper" width="100%" height="100%" playsinline="" autoplay=""
+                    muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/hero-video.mp4" type="video/mp4">
+                </video></div>
+            <div class="col-3"> <video id="border_md_croper" width="100%" height="100%" playsinline="" autoplay=""
+                    muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/hero-video.mp4" type="video/mp4">
+                </video></div>
+            <div class="col-3"> <video id="border_md_croper" width="100%" height="100%" playsinline="" autoplay=""
+                    muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/hero-video.mp4" type="video/mp4">
+                </video></div>
+            <div class="col-3"> <video width="100%" height="100%" playsinline="" autoplay="" muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/hero-video.mp4" type="video/mp4">
+                </video></div>
+        </div>
+
+
+
+    </div>
+    <div class="container-lg mt-5">
+        <div class="row my-5 justify-content-center border-bottom">
+            <div class="col-lg-5 col-md-5 mx-auto">
+                <video id="border_croper" width="100%" height="100%" autoplay="" muted="" loop="">
+                    <source 
+                        src="https://ambient.ai/wp-content/uploads/2021/11/amb-web-video-lowres-gx4iaj1r_5HNDPs1R.mp4"
+                        type="video/mp4">
+                </video>
+            </div>
+            <div class="col-lg-7 col-md-6 my-auto ">
+                <h1 class="display-4 text-muted">An AI-based transformation is under way digitizing whole industries
+                    with computer
+                    vision.</h1>
+                <p class="text-muted lead mt-2">
+                    From autonomous vehicles to robot chefs, computer vision is changing the way that humans & machines
+                    collaborate in the real world. By automating repeatable tasks, computer vision enables outsized
+                    gains in human productivity.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container-lg mt-5">
+        <div class="row my-5 justify-content-center border-bottom" id="row">
+
+            <div class="col-lg-7 col-md-6 my-auto p-2">
+                <h1 class="display-4 text-muted">We don’t do facial recognition.</h1>
+                <p class="text-muted lead mt-2">
+                    The privacy vs. security trade-off is a false dichotomy. You can respect individual privacy and
+                    increase group security. That’s why we don’t & won’t embrace facial recognition.
+                </p>
+            </div>
+
+
+            <div class="col-lg-5 col-md-5 mx-auto">
+                <video id="border_croper" width="100%" height="100%" autoplay="" muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/amb-web-video-lowres_GWj9Fe5W.mp4"
+                        type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-lg mt-5">
+        <div class="row my-5 justify-content-center border-bottom" id="row">
+
+            <div class="col-lg-7 col-md-6 my-auto p-2">
+                <h1 class="display-4 text-muted">We do always adapt to risk.</h1>
+                <p class="text-muted lead mt-2">
+                    Whether your immediate concern is everyday health and safety, employee tailgating, physical
+                    perimeter breaches or weapons detection, Ambient.ai has a threat signature.
+                </p>
+            </div>
+
+
+            <div class="col-lg-5 col-md-5 mx-auto">
+                <video id="border_croper" width="100%" height="100%" autoplay="" muted="" loop="">
+                    <source src="https://ambient.ai/wp-content/uploads/2021/11/AMB_web_animation_threatgraph_R3_V1.mp4"
+                        type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="container-fluid my-5 ">
+        <!--Row with two equal columns-->
+        <div class="row mb-2 justify-content-center">
+            <div class="col-lg-3 col-md-5 text-center" id=""><img src="./my-images/step-1.png" class="" alt="">
+                <div>
+                    <h1 class="text-center h3 text-uppercase">softwares </h1>
+                    <p class="lead text-muted text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                        beatae quidem ratione est consequuntur dignissimos provident, placeat similique dolorem velit.
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-5 text-center"><img id="border_croper" src="./my-images/step-1.png" class=""
+                    alt="">
+                <div>
+                    <h1 class="text-center h3 text-uppercase"> iot </h1>
+                    <p class="lead text-muted text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam quasi error labore mollitia optio nemo aliquam qui quisquam dolores totam?</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-5 text-center"><img id="border_croper" src="./my-images/step-1.png" class=""
+                    alt="">
+                <div>
+                    <h1 class="text-center h3 text-uppercase"> vedio Analytics </h1>
+                    <p class="lead text-muted text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Suscipit, nemo. Velit quaerat reiciendis rem nostrum modi, in quas blanditiis ratione.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-5 text-center"><img id="border_croper" src="./my-images/step-1.png" class=""
+                    alt="">
+                <div>
+                    <h1 class="text-center h3 text-uppercase">ocr Solution</h1>
+                    <p class="lead text-muted text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Repellat quos nobis asperiores. Nesciunt reprehenderit blanditiis vitae asperiores, dolor
+                        ratione repudiandae?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- application areas -->
+
+    <div class="container-lg my-5">
+        <h1 class="text-uppercase display-3 text-center fw-bold text-muted">application areas</h1>
+    </div>
+    <div class="container-lg my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-5 text-center mx-4 my-3">
+                <img id="border_md_croper" src="./my-images/smart-building.png" alt="" class="my_area w-100 " />
+                <div class="my-2">
+                    <a href="#" class="text-decoration-none text-muted fw-bold h5 text-uppercase">
+                        Smart Buildings</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-5 text-center mx-4 my-3">
+                <img id="border_md_croper" src="./my-images/Healthcare-1.png" alt="" class="my_area w-100 " />
+                <div class="my-2">
+                    <a href="#" class="text-decoration-none text-muted fw-bold h5 text-uppercase">
+                        Health Care</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-5 text-center mx-4 my-3">
+                <img id="border_md_croper" src="./my-images/industry.png" alt="" class="my_area w-100 " />
+                <div class="my-2">
+                    <a href="#" class="text-decoration-none text-muted fw-bold h5 text-uppercase">
+                        industries</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark mb-0 text-white container-fluid ">
+        <!-- Grid container -->
+        <div class="container-fluid p-4 text-center">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" id="border-sm-crop"
+                    href="https://www.facebook.com/thedisruptlabs/" role="button"><i class="bi bi-facebook"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" id="border-sm-crop" href="#!" role="button"><i
+                        class="bi bi-youtube"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" id="border-sm-crop"
+                    href="https://www.instagram.com/disruptionnetworklab/?hl=en" role="button"><i
+                        class="bi bi-instagram"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" id="border-sm-crop"
+                    href="https://pk.linkedin.com/company/thedisruptlabs" role="button"><i
+                        class="bi bi-linkedin"></i></a>
+
+                <a class="btn btn-outline-light btn-floating m-1" id="border-sm-crop"
+                    href="mailto:info@thedisruptlabs.com" role="button"><i class="bi bi-envelope"></i></a>
+
+                <!-- Linkedin -->
+
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Form -->
+            <section class="">
+                <form action="">
+                    <!--Grid row-->
+                    <div class="row justify-content-center">
+                        <!--Grid column-->
+
+
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-6 col-md-8 text-center">
+
+                            <div class=" mb-4 ">
+                                <img src="./my-images/logo.png" style="width: 100%;" alt="">
+                            </div>
+                        </div>
+                    </div>
+                   
+        </div>
+        <!--Grid row-->
+        </form>
+        </section>
+       
+
+        <!-- Section: Links -->
+        <section class="">
+            <!--Grid row-->
+            <div class="row p-4 text-lg-center just-md-center ">
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6  mb-4 mb-md-0">
+                    <h5 class="text-uppercase  ">vedio ai inspection</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li class="mt-1">
+                            <a href="#!" class=" text-white " id="footer_hov">Medical (QAOS)</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white " id="footer_hov">Caps Filling Inspection</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white  " id="footer_hov">Lays Chips Counting & Detection</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white " id="footer_hov">laser Maker Cone</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white " id="footer_hov"> Textilt (Soft packege Project)</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white " id="footer_hov">Injection mold Inspection</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white " id="footer_hov">Rice quality Inspecion</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">vedio analytics</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <h6> Retail Shops</h6>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white" id="footer_hov">CCTV Monitoring</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white" id="footer_hov">Customer Tracking</a>
+                        </li>
+                        <h6> Factory</h6>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white" id="footer_hov">CCTV Monitoring</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white" id="footer_hov">Vedio Analytics</a>
+                        </li>
+                        <h6> Security</h6>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white" id="footer_hov">Gun Detection</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">ocr solution</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li class="mt-1">
+                            <a href="#!" class="text-white" id="footer_hov">Box OCR (Inventory)</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white" id="footer_hov">CNIC Number Detection</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white" id="footer_hov">PDF Data Extraction</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="#!" class="text-white" id="footer_hov">Receipts Data Extraction </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 my-sm-4 my-md-0 my-lg-0 mb-md-0 ">
+                    <h5 class="text-uppercase  ">Company</h5>
+
+                    <!-- <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Link 1</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 2</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 3</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Link 4</a>
+              </li>
+            </ul> -->
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </section>
+        
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color:#2629b3 ; color: white;">
+            © 2022 Copyright:
+            <a class="text-white text-decoration-none" href="#">DISTRUB VA</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+
+
+
+
+
+
+
+    <script>
+        new WOW().init();
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- javascript for nav hover -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // make it as accordion for smaller screens
+            if (window.innerWidth > 992) {
+                document
+                    .querySelectorAll(".navbar .nav-item")
+                    .forEach(function (everyitem) {
+                        everyitem.addEventListener("mouseover", function (e) {
+                            let el_link = this.querySelector("a[data-bs-toggle]");
+
+                            if (el_link != null) {
+                                let nextEl = el_link.nextElementSibling;
+                                el_link.classList.add("show");
+                                nextEl.classList.add("show");
+                            }
+                        });
+                        everyitem.addEventListener("mouseleave", function (e) {
+                            let el_link = this.querySelector("a[data-bs-toggle]");
+
+                            if (el_link != null) {
+                                let nextEl = el_link.nextElementSibling;
+                                el_link.classList.remove("show");
+                                nextEl.classList.remove("show");
+                            }
+                        });
+                    });
+            }
+            // end if innerWidth
+        });
+              // DOMContentLoaded  end
+    </script>
+
+
+
+
+</body>
+
+</html>
